@@ -2,7 +2,7 @@
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #f5f0ff, #e0f7fa);
+    background: linear-gradient(135deg, #696d7d, #f0dcca);
     color: #333;
     animation: bgShift 10s ease-in-out infinite alternate;
     min-height: 100vh;
