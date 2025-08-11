@@ -5,6 +5,9 @@ body {
     background: linear-gradient(135deg, #f5f0ff, #e0f7fa);
     color: #333;
     animation: bgShift 10s ease-in-out infinite alternate;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -21,6 +24,7 @@ header h1 {
 main {
     max-width: 800px;
     margin: auto;
+    flex: 1;
     padding: 20px;
 }
 
