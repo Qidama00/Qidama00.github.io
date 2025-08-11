@@ -2,7 +2,9 @@
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #696d7d, #f0dcca);
+    --color1: #696d7d;
+    --color2: #f0dcca;
+    background: linear-gradient(135deg, var(--color1), var(--color2));
     color: #333;
     animation: bgShift 10s ease-in-out infinite alternate;
     min-height: 100vh;
@@ -70,6 +72,6 @@ footer {
 }
 
 @keyframes bgShift {
-    0% { background: linear-gradient(135deg, #f5f0ff, #e0f7fa); }
-    100% { background: linear-gradient(135deg, #fff0f5, #d0f0ff); }
+    0% { background: linear-gradient(135deg, var(--color1), var(--color2)); }
+    100% { background: linear-gradient(135deg, var(--color2), var(--color1)); }
 }

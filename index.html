@@ -11,6 +11,20 @@
         <p>互联网运营 · 独立艺术家</p>
     </header>
 
+    <div style="text-align:center; margin: 20px;">
+        <label>颜色1: <input type="color" id="color1" value="#696d7d"></label>
+        <label>颜色2: <input type="color" id="color2" value="#f0dcca"></label>
+        <button onclick="changeBackground()">应用背景</button>
+    </div>
+    <script>
+        function changeBackground() {
+            const c1 = document.getElementById("color1").value;
+            const c2 = document.getElementById("color2").value;
+            document.body.style.setProperty("--color1", c1);
+            document.body.style.setProperty("--color2", c2);
+        }
+    </script>
+
     <main>
         <section class="card slide-up">
             <h2>关于我</h2>
