@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <title>骑大马 · 个人主页</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .weather-widget {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+    </style>
 </head>
 <body>
     <header class="fade-in">
@@ -48,32 +66,34 @@
     </section>
 
     <!-- 南京天气插件 -->
-    <div id="he-plugin-simple"></div>
-    <script>
-      WIDGET = {
-        "CONFIG": {
-          "modules": "12034",
-          "background": 5,
-          "tmpColor": "FFFFFF",
-          "tmpSize": 16,
-          "cityColor": "FFFFFF",
-          "citySize": 16,
-          "aqiSize": 16,
-          "weatherIconSize": 24,
-          "alertIconSize": 18,
-          "padding": "10px",
-          "shadow": "1",
-          "language": "zh",
-          "borderRadius": 5,
-          "fixed": "false",
-          "vertical": "middle",
-          "horizontal": "center",
-          "city": "南京",
-          "key": "35c7c41c6d8442e783cb68e124588dc2"
+    <div class="weather-widget">
+      <div id="he-plugin-simple"></div>
+      <script>
+        WIDGET = {
+          "CONFIG": {
+            "modules": "12034",
+            "background": 5,
+            "tmpColor": "FFFFFF",
+            "tmpSize": 16,
+            "cityColor": "FFFFFF",
+            "citySize": 16,
+            "aqiSize": 16,
+            "weatherIconSize": 24,
+            "alertIconSize": 18,
+            "padding": "10px",
+            "shadow": "1",
+            "language": "zh",
+            "borderRadius": 5,
+            "fixed": "false",
+            "vertical": "middle",
+            "horizontal": "center",
+            "city": "南京",
+            "key": "35c7c41c6d8442e783cb68e124588dc2"
+          }
         }
-      }
-    </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+      </script>
+      <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+    </div>
 
     <footer class="fade-in">
         <p>© 2025 骑大马 | 以艺术记录生活</p>
