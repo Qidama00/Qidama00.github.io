@@ -1,125 +1,108 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <title>骑大马 · 个人主页</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      .weather-widget {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 150px;
-        height: 150px;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 999;
-      }
-    </style>
-</head>
-<body>
-    <header class="fade-in">
-        <h1>骑大马</h1>
-        <p>互联网运营 · 独立艺术家</p>
-    </header>
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="zh"> <!-- 设置页面语言为中文 -->
+<head> <!-- 页面头部 -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8 -->
+    <title>骑大马 · 个人主页</title> <!-- 页面标题 -->
+    <link rel="stylesheet" href="style.css"> <!-- 引入外部CSS文件 -->
+    
+</head> <!-- 结束head -->
+<body> <!-- 页面主体 -->
+    <header class="fade-in"> <!-- 顶部栏，渐入动画 -->
+        <h1>骑大马</h1> <!-- 网站主标题 -->
+        <p>互联网运营 · 独立艺术家</p> <!-- 简介 -->
+    </header> <!-- 结束header -->
 
-    <div style="text-align:center; margin: 20px;">
-        <label>颜色1: <input type="color" id="color1" value="#696d7d"></label>
-        <label>颜色2: <input type="color" id="color2" value="#f0dcca"></label>
-        <button onclick="changeBackground()">应用背景</button>
+    <div class="color-picker-container"> <!-- 颜色选择区域 -->
+        <label>颜色1: <input type="color" id="color1" value="#696d7d"></label> <!-- 颜色1选择器 -->
+        <label>颜色2: <input type="color" id="color2" value="#f0dcca"></label> <!-- 颜色2选择器 -->
+        <button onclick="changeBackground()">应用背景</button> <!-- 应用背景按钮 -->
     </div>
     <script>
-        function changeBackground() {
-            const c1 = document.getElementById("color1").value;
-            const c2 = document.getElementById("color2").value;
-            document.body.style.setProperty("--color1", c1);
-            document.body.style.setProperty("--color2", c2);
+        function changeBackground() { // 切换背景色函数
+            const c1 = document.getElementById("color1").value; // 获取颜色1 // 
+            const c2 = document.getElementById("color2").value; // 获取颜色2 // 
+            document.body.style.setProperty("--color1", c1); // 设置CSS变量color1 //
+            document.body.style.setProperty("--color2", c2); // 设置CSS变量color2 //
         }
     </script>
 
-    <main>
-        <section class="card slide-up">
-            <h2>关于我</h2>
-            <p>热爱创作与探索，游走在艺术与互联网的交界处。</p>
+    <main> <!-- 主要内容区 -->
+        <section class="card slide-up about-me"> <!-- 关于我卡片，向上动画 -->
+            <h2>关于我</h2> <!-- 小标题 -->
+            <p>热爱创作与探索，游走在艺术与互联网的交界处。</p> <!-- 个人简介 -->
         </section>
 
-        <section class="card slide-up" style="animation-delay: 0.3s;">
+        <section class="card slide-up works"> <!-- 作品集卡片，延迟动画 -->
             <h2>作品集</h2>
-            <p><a href="#">即将上线</a></p>
+            <p><a href="works.html">即将上线</a></p> <!-- 作品集占位 -->
         </section>
 
-        <section class="card slide-up" style="animation-delay: 0.6s;">
+        <section class="card slide-up contact"> <!-- 联系我卡片，延迟动画 -->
             <h2>联系我</h2>
-            <p>Email: ych.liu00@outlook.com</p>
+            <p>Email: ych.liu00@outlook.com</p> <!-- 邮箱地址 -->
         </section>
     </main>
 
-    <section class="card slide-up" id="nanjing-weather">
+    <section class="card slide-up" id="nanjing-weather"> <!-- 南京天气卡片 -->
         <h2>南京天气</h2>
-        <p id="weather-info">加载中...</p>
+        <p id="weather-info">加载中...</p> <!-- 天气信息显示区 -->
     </section>
 
     <!-- 南京天气插件 -->
-    <div class="weather-widget">
-      <div id="he-plugin-simple"></div>
+    <div class="weather-widget"> <!-- 天气插件容器 -->
+      <div id="he-plugin-simple"></div> <!-- 和风天气插件挂载点 -->
       <script>
-        WIDGET = {
+        WIDGET = { // 配置和风天气插件 //
           "CONFIG": {
-            "modules": "12034",
-            "background": 5,
-            "tmpColor": "FFFFFF",
-            "tmpSize": 16,
-            "cityColor": "FFFFFF",
-            "citySize": 16,
-            "aqiSize": 16,
-            "weatherIconSize": 24,
-            "alertIconSize": 18,
-            "padding": "10px",
-            "shadow": "1",
-            "language": "zh",
-            "borderRadius": 5,
-            "fixed": "false",
-            "vertical": "middle",
-            "horizontal": "center",
-            "city": "南京",
-            "key": "35c7c41c6d8442e783cb68e124588dc2"
+            "modules": "12034", // 使用模块编号 //
+            "background": 5, // 背景样式 //
+            "tmpColor": "FFFFFF", // 温度颜色 //
+            "tmpSize": 16, // 温度字体大小 //
+            "cityColor": "FFFFFF", // 城市名颜色 //
+            "citySize": 16, // 城市字体大小 //
+            "aqiSize": 16, // 空气质量字体大小 //
+            "weatherIconSize": 24, // 天气图标大小 //
+            "alertIconSize": 18, // 警报图标大小 //
+            "padding": "10px", // 内边距 //
+            "shadow": "1", // 阴影 //
+            "language": "zh", // 语言为中文 //
+            "borderRadius": 5, // 圆角 //
+            "fixed": "false", // 非固定定位 //
+            "vertical": "middle", // 垂直居中 //
+            "horizontal": "center", // 水平居中 //
+            "city": "南京", // 城市名称 //
+            "key": "35c7c41c6d8442e783cb68e124588dc2" // API密钥 //
           }
         }
       </script>
-      <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+      <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> <!-- 插件JS文件 -->
     </div>
 
-    <footer class="fade-in">
-        <p>© 2025 骑大马 | 以艺术记录生活</p>
+    <footer class="fade-in"> <!-- 页脚，渐入动画 -->
+        <p>© 2025 骑大马 | 以艺术记录生活</p> <!-- 版权信息 -->
     </footer>
 
     <script>
-      async function fetchNanjingWeather() {
-          const url = "https://kp2k5n26nk.re.qweatherapi.com/v7/weather/now?location=101190101";
+      async function fetchNanjingWeather() { // 获取南京天气的异步函数 //
+          const url = "https://kp2k5n26nk.re.qweatherapi.com/v7/weather/now?location=101190101"; // API接口URL //
           try {
               const res = await fetch(url, {
                   headers: {
-                      "X-QW-Api-Key": "35c7c41c6d8442e783cb68e124588dc2"
+                      "X-QW-Api-Key": "35c7c41c6d8442e783cb68e124588dc2" // API密钥头部 //
                   }
               });
-              const data = await res.json();
+              const data = await res.json(); // 解析返回JSON数据 //
               if (data && data.now) {
                   document.getElementById("weather-info").textContent =
-                      `${data.now.text} ${data.now.temp}℃，体感 ${data.now.feelsLike}℃`;
+                      `${data.now.text} ${data.now.temp}℃，体感 ${data.now.feelsLike}℃`; // 显示天气信息 //
               } else {
-                  document.getElementById("weather-info").textContent = "天气数据获取失败";
+                  document.getElementById("weather-info").textContent = "天气数据获取失败"; // 数据获取失败提示 //
               }
           } catch (err) {
-              document.getElementById("weather-info").textContent = "无法获取天气数据";
+              document.getElementById("weather-info").textContent = "无法获取天气数据"; // 网络或解析错误提示 //
           }
       }
-      fetchNanjingWeather();
+      fetchNanjingWeather(); // 页面加载时调用获取天气函数 //
     </script>
-</body>
-</html>
+</body> <!-- 结束body -->
+</html> <!-- 结束html -->
