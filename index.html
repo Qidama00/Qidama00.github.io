@@ -42,6 +42,11 @@
         </section>
     </main>
 
+    <section class="card slide-up" id="nanjing-weather">
+        <h2>南京天气</h2>
+        <p id="weather-info">加载中...</p>
+    </section>
+
     <!-- 南京天气插件 -->
     <div id="he-plugin-simple"></div>
     <script>
@@ -73,5 +78,28 @@
     <footer class="fade-in">
         <p>© 2025 骑大马 | 以艺术记录生活</p>
     </footer>
+
+    <script>
+      async function fetchNanjingWeather() {
+          const url = "https://kp2k5n26nk.re.qweatherapi.com/v7/weather/now?location=101190101";
+          try {
+              const res = await fetch(url, {
+                  headers: {
+                      "X-QW-Api-Key": "35c7c41c6d8442e783cb68e124588dc2"
+                  }
+              });
+              const data = await res.json();
+              if (data && data.now) {
+                  document.getElementById("weather-info").textContent =
+                      `${data.now.text} ${data.now.temp}℃，体感 ${data.now.feelsLike}℃`;
+              } else {
+                  document.getElementById("weather-info").textContent = "天气数据获取失败";
+              }
+          } catch (err) {
+              document.getElementById("weather-info").textContent = "无法获取天气数据";
+          }
+      }
+      fetchNanjingWeather();
+    </script>
 </body>
 </html>
