@@ -12,20 +12,6 @@
         <p>互联网运营 · 独立艺术家</p> <!-- 简介 -->
     </header> <!-- 结束header -->
 
-    <div class="color-picker-container"> <!-- 颜色选择区域 -->
-        <label>颜色1: <input type="color" id="color1" value="#696d7d"></label> <!-- 颜色1选择器 -->
-        <label>颜色2: <input type="color" id="color2" value="#f0dcca"></label> <!-- 颜色2选择器 -->
-        <button onclick="changeBackground()">应用背景</button> <!-- 应用背景按钮 -->
-    </div>
-    <script>
-        function changeBackground() { // 切换背景色函数
-            const c1 = document.getElementById("color1").value; // 获取颜色1 // 
-            const c2 = document.getElementById("color2").value; // 获取颜色2 // 
-            document.body.style.setProperty("--color1", c1); // 设置CSS变量color1 //
-            document.body.style.setProperty("--color2", c2); // 设置CSS变量color2 //
-        }
-    </script>
-
     <main> <!-- 主要内容区 -->
         <section class="card slide-up about-me"> <!-- 关于我卡片，向上动画 -->
             <h2>关于我</h2> <!-- 小标题 -->
