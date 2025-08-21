@@ -6,13 +6,26 @@
     <link rel="stylesheet" href="style.css"> <!-- 引入外部CSS文件 -->
     
 </head> <!-- 结束head -->
-<body> <!-- 页面主体 -->
-    <header class="fade-in"> <!-- 顶部栏，渐入动画 -->
-        <h1>骑大马</h1> <!-- 网站主标题 -->
-        <p>互联网运营 · 独立艺术家</p> <!-- 简介 -->
-    </header> <!-- 结束header -->
 
+<canvas id="bgCanvas"></canvas>
+
+<body> <!-- 页面主体 -->
+    
+    <script src="bgCanvas.js"></script>
+    
+    <div class="glass-layer"></div>
+    
     <main> <!-- 主要内容区 -->
+        <header class="main-header">
+            <h1 class="main-title">骑大马</h1>
+            <p class="main-subtitle">互联网运营 · 独立艺术家</p>
+          </header>
+
+        <section class="card slide-up my-card">
+            <h2>我的卡片内容</h2>
+            <p>这里是示例文字</p>
+        </section>
+
         <section class="card slide-up about-me"> <!-- 关于我卡片，向上动画 -->
             <h2>关于我</h2> <!-- 小标题 -->
             <p>热爱创作与探索，游走在艺术与互联网的交界处。</p> <!-- 个人简介 -->
@@ -33,36 +46,6 @@
         <h2>南京天气</h2>
         <p id="weather-info">加载中...</p> <!-- 天气信息显示区 -->
     </section>
-
-    <!-- 南京天气插件 -->
-    <div class="weather-widget"> <!-- 天气插件容器 -->
-      <div id="he-plugin-simple"></div> <!-- 和风天气插件挂载点 -->
-      <script>
-        WIDGET = { // 配置和风天气插件 //
-          "CONFIG": {
-            "modules": "12034", // 使用模块编号 //
-            "background": 5, // 背景样式 //
-            "tmpColor": "FFFFFF", // 温度颜色 //
-            "tmpSize": 16, // 温度字体大小 //
-            "cityColor": "FFFFFF", // 城市名颜色 //
-            "citySize": 16, // 城市字体大小 //
-            "aqiSize": 16, // 空气质量字体大小 //
-            "weatherIconSize": 24, // 天气图标大小 //
-            "alertIconSize": 18, // 警报图标大小 //
-            "padding": "10px", // 内边距 //
-            "shadow": "1", // 阴影 //
-            "language": "zh", // 语言为中文 //
-            "borderRadius": 5, // 圆角 //
-            "fixed": "false", // 非固定定位 //
-            "vertical": "middle", // 垂直居中 //
-            "horizontal": "center", // 水平居中 //
-            "city": "南京", // 城市名称 //
-            "key": "35c7c41c6d8442e783cb68e124588dc2" // API密钥 //
-          }
-        }
-      </script>
-      <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> <!-- 插件JS文件 -->
-    </div>
 
     <footer class="fade-in"> <!-- 页脚，渐入动画 -->
         <p>© 2025 骑大马 | 以艺术记录生活</p> <!-- 版权信息 -->
